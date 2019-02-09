@@ -1,0 +1,37 @@
+.blog-image{
+  width: 650px;
+  height: 242px;
+  border: 1px solid lightgrey;
+  padding: 1rem;
+}
+.pad10{
+  padding: 10px;
+}
+
+
+#mainNav {
+  border-color: transparent;
+  background-color: #949090;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.social-icon:hover {
+  box-shadow: #191818 1px 3px 2px 2px;
+  border-radius: 50%;
+  transition: .2s;
+}
+
+.menu-icon{
+  font-size: 1.3rem;
+  padding-right: 10px;
+  vertical-align: sub;
+}
+
+::ng-deep .mat-menu-panel {
+  min-width: 150px !important;
+  margin-left: 20px;
+}
