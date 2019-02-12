@@ -1,7 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@media only screen and (max-width: 992px) {
+  /* #sideNavId {
+    display: none;
+  } */
+  #mainNavId {
+    display: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #sideNavId {
+    display: none;
+  }
+}
 .mar-top-55{
   margin-top: 55px;
+}
+
+.mar-top-10{
+  margin-top: 10px;
 }
 
 .mar-bottom-30{
@@ -11,4 +28,13 @@
 .page_heading{
   font-size: 2rem;
   padding: 1rem 0;
+}
+a.nav-link:focus, button:focus {
+  outline: none;
+}
+
+.submenu-icon {
+  font-size: 1rem;
+  padding-right: 10px;
+  margin-top: 0.935rem;
 }

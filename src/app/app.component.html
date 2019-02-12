@@ -1,91 +1,47 @@
 
 <!-- Navigation Menu Start-->
-<app-nav></app-nav>
+<app-nav id="mainNavId"></app-nav>
 <!-- Navigation Menu End-->
 
-<!--<mat-sidenav-container>
-  <mat-sidenav #appDrawer mode="over" opened="false">
-    <mat-nav-list>
-      <app-menu-list-item *ngFor="let item of navItems" [item]="item"></app-menu-list-item>
-    </mat-nav-list>
-  </mat-sidenav>
-  <app-top-nav fxHide.xs></app-top-nav>
-  <router-outlet></router-outlet>
-</mat-sidenav-container>-->
-<!--<router-outlet></router-outlet>-->
-
 <mat-toolbar color="primary" id="mainNav">
-  <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+  <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
   <a class="navbar-brand brand-title js-scroll-trigger" routerLink="">Souqmode</a>
 </mat-toolbar>
 
-<mat-sidenav-container class="example-container"
-                       [style.marginTop.px]="56">
-  <mat-sidenav #snav [mode]="'over'"
-               fixedTopGap="56">
+<mat-sidenav-container class="example-container" [style.marginTop.px]="56">
+  <mat-sidenav #sidenav [mode]="'over'" fixedTopGap="56" id="sideNavId">
     <mat-nav-list>
-      <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+      <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
+      <a mat-list-item (click)="sidenav.toggle()" routerLink="">
+        <i class="fas fa-1x fa-home text-primary mb-3 sr-icon-1 submenu-icon"></i>Home</a>
+      <a mat-list-item (click)="sidenav.toggle()" href="#about">
+        <i class="fas fa-1x fa-podcast text-primary mb-3 sr-icon-1 submenu-icon"></i>About</a>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span class="mar-top-10"><i class="fas fa-1x fa-chart-line text-primary mb-3 sr-icon-1 dgm-icon"></i>
+              Digital Marketing</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="/sem" (click)="sidenav.toggle()"><i class="fas fa-1x fa-heart text-primary mb-3 sr-icon-1 submenu-icon"></i>SEM</a>
+          <a mat-list-item routerLink="/seo" (click)="sidenav.toggle()"><i class="fas fa-1x fa-gem text-primary mb-3 sr-icon-1 submenu-icon"></i>SEO</a>
+          <a mat-list-item routerLink="/smm" (click)="sidenav.toggle()"><i class="fas fa-1x fa-paper-plane text-primary mb-3 sr-icon-1 submenu-icon"></i>SMM</a>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-divider></mat-divider>
+      <!-- <a mat-list-item routerLink=".">Digital Marketing</a> -->
+      <a mat-list-item href="#portfolio" (click)="sidenav.toggle()"><i class="fas fa-1x fa-blog text-primary mb-3 sr-icon-1 submenu-icon"></i>Blog</a>
+      <a mat-list-item href="#contact" (click)="sidenav.toggle()"><i class="fas fa-1x fa-address-card text-primary mb-3 sr-icon-1 submenu-icon"></i>Contact</a>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <router-outlet></router-outlet>
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
     <!--footer starts here-->
-    <footer id="myFooter">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-3 myCols">
-            <h5>Get started</h5>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Sign up</a></li>
-              <!--<li><a href="#">Downloads</a></li>-->
-            </ul>
-          </div>
-          <div class="col-sm-3 myCols">
-            <h5>About us</h5>
-            <ul>
-              <li><a href="#">Contact us</a></li>
-              <li><a href="#">Reviews</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-3 myCols">
-            <h5>Support</h5>
-            <ul>
-              <!--<li><a href="#">FAQ</a></li>-->
-              <li><a href="#">Help desk</a></li>
-              <li><a href="#">Forums</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-3 myCols">
-            <h5>Legal</h5>
-            <ul>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="social-networks">
-        <a href="#" class="twitter">
-          <img class="img-fluid social-icon" src="assets/img/icons/twitter.svg" alt="twitter">
-        </a>
-        <a href="#" class="facebook">
-          <img class="img-fluid social-icon" src="assets/img/icons/facebook.svg" alt="facebook">
-        </a>
-        <a href="#" class="google">
-          <img class="img-fluid social-icon" src="assets/img/icons/google.svg" alt="google">
-        </a>
-        <a href="#" class="google">
-          <img class="img-fluid social-icon" src="assets/img/icons/youtube.svg" alt="youtube">
-        </a>
-      </div>
-      <div class="footer-copyright">
-        <p>© {{year}} Souqmode, All rights reserved. </p>
-      </div>
-    </footer>
+    <app-footer></app-footer>
     <!--footer ends here-->
+
   </mat-sidenav-content>
 
 </mat-sidenav-container>

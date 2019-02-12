@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {floatMenu} from './floatmenu';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,8 @@ import {floatMenu} from './floatmenu';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild(MatSidenav) sidenav: MatSidenav;
   title = 'app';
-  fillerNav = Array(50).fill(0).map((_, i) => `Nav Item ${i + 1}`);
   year = new Date().getFullYear();
   constructor() {
   }

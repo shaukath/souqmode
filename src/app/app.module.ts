@@ -8,12 +8,19 @@ import {MatMenuModule} from '@angular/material/menu';
 
 import { environment } from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatButtonToggleModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule,
+  MatButtonToggleModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatExpansionModule} from '@angular/material';
 import { SeoComponentComponent } from './seo-component/seo-component.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { SemComponent } from './sem/sem.component';
 import { SmmComponent } from './smm/smm.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,8 @@ import { SmmComponent } from './smm/smm.component';
     NavComponent,
     HomeComponent,
     SemComponent,
-    SmmComponent
+    SmmComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,8 @@ import { SmmComponent } from './smm/smm.component';
     MatToolbarModule,
     MatButtonToggleModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],

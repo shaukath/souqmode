@@ -1,0 +1,11 @@
+.social-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.social-icon:hover {
+  box-shadow: #191818 1px 3px 2px 2px;
+  border-radius: 50%;
+  transition: .2s;
+  transform: scale(1.2);
+}
