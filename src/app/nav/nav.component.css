@@ -8,6 +8,13 @@
   padding: 10px;
 }
 
+.brand-title{
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+
 
 #mainNav {
   border-color: transparent;

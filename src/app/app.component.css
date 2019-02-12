@@ -8,10 +8,26 @@
   padding: 10px;
 }
 
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 
 #mainNav {
   border-color: transparent;
   background-color: #949090;
+}
+
+.brand-title{
+  color: #fff !important;
+  position: absolute;
+  right: 3%;
 }
 
 .social-icon {
